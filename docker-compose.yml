@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    container_name: ecom_analytics_db
+    env_file: .env
+    restart: unless-stopped
+    ports:
+      # host port 5434 because 5432/5433 are used by other projects on this machine
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

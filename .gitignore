@@ -1,0 +1,15 @@
+.env
+.venv/
+__pycache__/
+data/*
+!data/README.md
+outputs/
+excel/*.csv
+
+# working guides, not part of the published project
+excel/GUIDE.md
+powerbi/GUIDE.md
+
+# 134MB with imported data - over GitHub's 100MB limit; dashboard.pdf represents it
+powerbi/*.pbix
+.ipynb_checkpoints/
