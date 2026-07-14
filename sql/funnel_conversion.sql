@@ -1,6 +1,5 @@
--- Shopping funnel: how many users viewed, added to cart, purchased.
--- Note: this dataset under-records cart events (some purchases have no
--- cart event), so cart->purchase is measured on users who did BOTH.
+-- Funnel by user: cart->purchase measured on users who did both steps
+-- (this dataset records some purchases with no preceding cart event).
 
 WITH per_user AS (
     SELECT

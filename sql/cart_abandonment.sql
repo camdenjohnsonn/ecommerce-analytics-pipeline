@@ -1,5 +1,4 @@
--- Of sessions where something was added to the cart,
--- how many ended without a purchase?
+-- Share of cart sessions that ended without a purchase.
 
 WITH sessions AS (
     SELECT

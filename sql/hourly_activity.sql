@@ -1,5 +1,4 @@
--- Activity by hour of day (UTC) and event type.
--- Good for a heatmap / "when do people shop" chart.
+-- Event counts by hour of day (UTC) and event type.
 
 SELECT
     extract(hour FROM event_time) AS hour_utc,

@@ -1,9 +1,8 @@
--- Row-level extract for the Excel analysis: one row per item purchased,
--- with brand and category names joined in (~74k rows, Excel-friendly).
+-- Row-level purchase extract for the Excel analysis (one row per item bought).
 
 SELECT
     e.event_time,
-    e.event_time::date                    AS purchase_date,
+    e.event_time::date                  AS purchase_date,
     e.user_id,
     e.user_session,
     e.product_id,

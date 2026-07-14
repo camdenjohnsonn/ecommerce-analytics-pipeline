@@ -1,5 +1,4 @@
--- Headline numbers for the top of the dashboard (KPI cards).
--- An "order" = all purchases in one session.
+-- Headline numbers for the dashboard KPI cards (an order = one session's purchases).
 
 WITH totals AS (
     SELECT
@@ -17,6 +16,6 @@ orders AS (
 )
 SELECT
     totals.*,
-    (SELECT count(*) FROM orders)                       AS total_orders,
-    (SELECT round(avg(order_value), 2) FROM orders)     AS avg_order_value
+    (SELECT count(*) FROM orders)                   AS total_orders,
+    (SELECT round(avg(order_value), 2) FROM orders) AS avg_order_value
 FROM totals;

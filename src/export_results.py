@@ -1,8 +1,5 @@
 """Run each dashboard query and save its result as a CSV in outputs/.
 
-These CSVs feed the Excel analysis, and work as a Power BI import
-fallback if the direct Postgres connection gives trouble.
-
 Usage:
     python src/export_results.py     (from the project root)
 """
@@ -42,8 +39,6 @@ for name in QUERIES:
     result.to_csv(f"outputs/{name}.csv", index=False)
     print(f"outputs/{name}.csv: {len(result)} rows")
 
-# row-level purchases extract for the Excel analysis - bigger than the
-# dashboard results above, so it gets its own folder
 os.makedirs("excel", exist_ok=True)
 with open("sql/purchases_extract.sql") as f:
     query = f.read()

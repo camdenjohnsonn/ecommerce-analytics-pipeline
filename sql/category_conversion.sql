@@ -1,9 +1,7 @@
--- Which category groups convert browsers into buyers best?
--- events (fact) -> products -> categories, then compare views vs purchases.
--- HAVING keeps only groups with enough traffic to be meaningful.
+-- View-to-purchase conversion by category group (groups with meaningful traffic).
 
 SELECT
-    coalesce(c.category_group, 'other')             AS category_group,
+    coalesce(c.category_group, 'other')               AS category_group,
     count(*) FILTER (WHERE e.event_type = 'view')     AS views,
     count(*) FILTER (WHERE e.event_type = 'purchase') AS purchases,
     round(100.0 * count(*) FILTER (WHERE e.event_type = 'purchase')
